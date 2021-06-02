@@ -1,0 +1,182 @@
+{
+    "project": "document ranking",
+    "aggregatorGroupType": "ugcd15",
+    "nodes": {
+        "1": {
+            "id": "1",
+            "name": "document ranking",
+            "nodeType": "aggregator",
+            "details": {
+                "aggregatorType": "gcd",
+                "symbol": "hc+"
+            }
+        },
+        "11": {
+            "id": "11",
+            "name": "document length",
+            "weight": "0.2",
+            "nodeType": "attribute",
+            "details": {
+                "units": "count",
+                "breakValues": [
+                    [0, 0],
+                    [300, 1],
+                    [600, 1],
+                    [1500, 0]
+                ]
+            }
+        },
+        "12": {
+            "id": "12",
+            "name": "title",
+            "weight": "0.3",
+            "nodeType": "aggregator",
+            "details": {
+                "aggregatorType": "gcd",
+                "symbol": "hc+"
+            }
+        },
+        "13": {
+            "id": "13",
+            "name": "content",
+            "weight": "0.2",
+            "nodeType": "aggregator",
+            "details": {
+                "aggregatorType": "cpa",
+                "penalty": "0.35",
+                "reward": "0.25",
+                "optional": "131",
+                "mandatory": "132"
+            }
+        },
+        "14": {
+            "id": "14",
+            "name": "word embedding",
+            "weight": "0.3",
+            "nodeType": "aggregator",
+            "details": {
+                "aggregatorType": "dpa",
+                "penalty": "0.25",
+                "reward": "0.35",
+                "optional": "141",
+                "sufficient": "142"
+            }
+        },
+        "121": {
+            "id": "121",
+            "name": "contains 'middle class'",
+            "weight": "0.7",
+            "nodeType": "attribute",
+            "details": {
+                "units": "yes/no",
+                "breakValues": [
+                    [0, 0],
+                    [300, 1],
+                    [600, 1],
+                    [1500, 0]
+                ]
+            }
+        },
+        "122": {
+            "id": "122",
+            "name": "contains 'income'",
+            "weight": "0.3",
+            "nodeType": "attribute",
+            "details": {
+                "units": "yes/no",
+                "breakValues": [
+                    [0, 0],
+                    [300, 1],
+                    [600, 1],
+                    [1500, 0]
+                ]
+            }
+        },
+        "131": {
+            "id": "131",
+            "name": "contains 'america'",
+            "nodeType": "attribute",
+            "details": {
+                "units": "yes/no",
+                "breakValues": [
+                    [0, 0],
+                    [300, 1],
+                    [600, 1],
+                    [1500, 0]
+                ]
+            }
+        },
+        "132": {
+            "id": "132",
+            "name": "contains 'obama'",
+            "nodeType": "attribute",
+            "details": {
+                "units": "yes/no",
+                "breakValues": [
+                    [0, 0],
+                    [300, 1],
+                    [600, 1],
+                    [1500, 0]
+                ]
+            }
+        },
+        "141": {
+            "id": "141",
+            "name": "fasttext",
+            "nodeType": "attribute",
+            "details": {
+                "units": "yes/no",
+                "breakValues": [
+                    [0, 0],
+                    [300, 1],
+                    [600, 1],
+                    [1500, 0]
+                ]
+            }
+        },
+        "142": {
+            "id": "142",
+            "name": "bert",
+            "nodeType": "attribute",
+            "details": {
+                "units": "yes/no",
+                "breakValues": [
+                    [0, 0],
+                    [300, 1],
+                    [600, 1],
+                    [1500, 0]
+                ]
+            }
+        }
+    },
+    "values": [
+        {
+            "id": "11",
+            "value": 300
+        },
+        {
+            "id": "121",
+            "value": 300
+        },
+        {
+            "id": "122",
+            "value": 255
+        },
+        {
+            "id": "131",
+            "value": 300
+        },
+        {
+            "id": "132",
+            "value": 300
+        },
+        {
+            "id": "141",
+            "value": 100
+        },
+        {
+            "id": "142",
+            "value": 300
+        }
+    ]
+}
